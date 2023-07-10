@@ -50,3 +50,5 @@ This repository contains a recursive file finder utility implemented in C. The u
 ##### Finding a folder recursively in a custom directory (relative path):
 ```shell
 ./a.out -folder foldername ../path/to/directory
+
+![Example Image](./image.png)

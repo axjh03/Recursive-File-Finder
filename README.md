@@ -20,7 +20,7 @@ This repository contains a recursive file finder utility implemented in C. The u
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/axjh03/recursive-file-finder-c.git
+   git clone https://github.com/axjh03/Recursive-File-Finder.git
 
 2. Navigate to the project directory:
     ```shell
@@ -37,15 +37,16 @@ This repository contains a recursive file finder utility implemented in C. The u
 ```shell
 ./a.out -file filename.ext
 
-Finding a folder recursively in the current directory:
+##### Finding a folder recursively in the current directory:
+
 ```shell
 ./a.out -folder foldername
 
-Finding a file recursively in a custom directory (absolute path):
+##### Finding a file recursively in a custom directory (absolute path):
 ```shell
-./a.out -file filename.ext -dir /path/to/directory
+./a.out -file filename.ext  /path/to/directory
 
 
-Finding a folder recursively in a custom directory (relative path):
+##### Finding a folder recursively in a custom directory (relative path):
 ```shell
-./a.out -folder foldername -dir ../path/to/directory
+./a.out -folder foldername ../path/to/directory

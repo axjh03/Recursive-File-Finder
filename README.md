@@ -51,4 +51,4 @@ This repository contains a recursive file finder utility implemented in C. The u
 ```shell
 ./a.out -folder foldername ../path/to/directory
 
-![Example Image](./image.png)
+!(./image.png)

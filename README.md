@@ -34,6 +34,8 @@ This repository contains a recursive file finder utility implemented in C. The u
 ## Usage
 ### Finding a file recursively in the current directory:
 
+![Example Image](./image.png)
+
 ```shell
 ./a.out -file filename.ext
 
@@ -51,4 +53,3 @@ This repository contains a recursive file finder utility implemented in C. The u
 ```shell
 ./a.out -folder foldername ../path/to/directory
 
-!(./image.png)

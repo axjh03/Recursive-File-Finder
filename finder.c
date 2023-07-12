@@ -4,6 +4,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <limits.h>
+#include <time.h>
 
 #ifdef _WIN32
     #include <windows.h>
@@ -64,10 +65,18 @@ void find_item_recursive(const char* item_name, const char* starting_directory) 
         return;
     }
 
+    clock_t start_time = clock();
     int found = search_item_recursive(item_name, starting_directory);
+    clock_t end_time = clock();
+
+    double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 
     if (!found)
         printf("Item not found\n");
+
+    printf("\nTotal directories searched: %d\n", num_dirs_searched);
+    printf("Total files searched: %d\n", num_files_searched);
+    printf("Time taken: %.2f seconds\n", elapsed_time);
 }
 
 char* get_current_directory() {
@@ -100,10 +109,8 @@ int main(int argc, char* argv[]) {
         starting_directory = get_current_directory();
     }
 
-    if (strcmp(option, "-file") == 0) {
-        find_item_recursive(item_name, starting_directory);
-    }
-    else if (strcmp(option, "-folder") == 0) {
+    if (strcmp(option, "-file") == 0 || strcmp(option, "-folder") == 0) {
+        printf("Searching in: %s\n", starting_directory);
         find_item_recursive(item_name, starting_directory);
     }
     else {
@@ -111,9 +118,6 @@ int main(int argc, char* argv[]) {
         printf("Usage: ./program -file filename.ext OR ./program -folder foldername [starting_directory]\n");
         return 1;
     }
-
-    printf("\nTotal directories searched: %d\n", num_dirs_searched);
-    printf("Total files searched: %d\n", num_files_searched);
 
     // Free memory if current_directory is dynamically allocated
     if (argc != 4) {

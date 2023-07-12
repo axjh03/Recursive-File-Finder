@@ -33,7 +33,7 @@ This repository contains a recursive file finder utility implemented in C. The u
 
 ## Usage
 ### Finding a file recursively in the current directory:
-
+![Example Image](./image1.png)
 ![Example Image](./image.png)
 
 ```shell
